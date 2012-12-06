@@ -1,6 +1,6 @@
 h1. Bedside
 
-Bedside is a free, open-source application for making hospital stays more comfortable and connect. It provides simple tools for scheduling visitors, coordinating gifts, and posting updates.
+Bedside is a free, open-source application for making hospital stays more comfortable and connected. It provides simple tools for scheduling visitors, coordinating gifts, and posting updates.
 
 h2. Credits
 
