@@ -4,7 +4,7 @@ Bedside is a free, open-source application for making hospital stays more comfor
 
 h2. Credits
 
-Bedside was created by [Tanooki Suit Labs](http://tanookisuitlabs.com)
+Bedside was created by "Tanooki Suit Labs":http://tanookisuitlabs.com
 
 h2. Contributing
 
