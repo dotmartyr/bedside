@@ -27,3 +27,15 @@ gem "rolify", ">= 3.2.0"
 gem "simple_form", ">= 2.0.4"
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+
+
+# To use ActiveModel has_secure_password
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'activeadmin'
+group :development, :test do
+  gem "pry"
+  gem 'mailcatcher'
+  gem 'guard'
+  gem 'guard-spork'
+  gem 'guard-bundler'
+end
