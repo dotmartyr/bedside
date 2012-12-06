@@ -4,7 +4,9 @@
 html {
   margin: 0px;
   padding: 0px;
-  background-color: #efede8; }
+  background-color: #efede8; 
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
   margin: 0;
@@ -15,9 +17,9 @@ body {
     .span10 {
       .heading {
         &.heading-1 {
-          margin: 73px 0px 10px 0px;
+          margin: 70px 0px 10px 0px;
           text-shadow: 0px 1px 1px #000000;
-          font-family: "proxima-nova";
+          font-family: "oswald";
           font-weight: 900;
           font-size: 53pt;
           color: #ffffff; }
@@ -50,6 +52,7 @@ body {
           border-left: 1px solid rgba(0, 0, 0, 0.149); }
         &.btn-2 {
           background: #ffffff;
+          color:#666;
           background-image: -moz-linear-gradient(270deg, white 0%, #e6e6e6 100%);
           background-image: -webkit-linear-gradient(270deg, white 0%, #e6e6e6 100%);
           background-image: -o-linear-gradient(270deg, white 0%, #e6e6e6 100%);
