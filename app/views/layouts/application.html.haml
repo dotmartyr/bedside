@@ -11,12 +11,6 @@
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
     #main{:role => "main"}
-      .container
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
-          %footer
-      / ! end of .container
-    / ! end of #main
+      = render 'layouts/messages'
+      = yield
+          
