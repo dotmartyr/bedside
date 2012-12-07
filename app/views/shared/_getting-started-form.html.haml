@@ -1,0 +1,15 @@
+#overlay
+#getting-started-form
+  %h1.heading
+    Welcome!
+    %br
+  .dom-body-text
+    %p.p-1 This process will take you through the creation of a new Bedside page.
+    %p.p-1 First, let's create an account for you so we can keep any sensitive info private.
+  = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
+    = f.error_notification
+    = f.input :name, :autofocus => true
+    = f.input :email, :required => true
+    = f.input :password, :required => true
+    = f.input :password_confirmation, :required => true
+    = f.button :submit, 'Create Account', :class => 'btn-primary'

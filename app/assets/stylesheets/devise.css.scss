@@ -1,0 +1,40 @@
+#getting-started-form{
+  margin:0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #969696;
+  padding:0 10px;
+  width: 300px;
+  z-index:1001;
+  .control-group{
+    margin-bottom: 3px;
+  }
+  abbr{
+    display:none;
+  }
+  p{
+    font-size:16px;
+  }
+  input{
+    width:150px;
+    margin-bottom:10px;
+  }
+  label{
+    float:left;
+    width:100px;
+  }
+  .center {
+    text-align:center;
+  }
+}
+.devise-links{
+  margin-top:20px;
+  text-align:center;
+  a{
+    color:#fff;
+    font-weight:bold;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    margin-bottom:10px;
+    display:block;
+  }
+}
