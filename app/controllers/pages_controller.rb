@@ -3,23 +3,27 @@ class PagesController < ApplicationController
   respond_to :html, :js
   
   def show
-    @page = Page.find(params[:id])
+    @page = current_user.pages.find(params[:id])
 
     respond_with(@page)
   end
 
   def new
-    respond_with(@page = Page.new)   
+    respond_with(@page = current_user.pages.new)   
   end 
 
   def create
-    @page = Page.new(params[:page])
-  
-    respond_with(@page)
+    @page = current_user.pages.new(params[:page])
+    if @page.save
+      current_user.pages << @page
+      respond_with(@page)
+    else
+      respond_with(@page.errors)
+    end
   end
 
   def update
-    @page = Page.find(params[:id])
+    @page = current_user.pages.find(params[:id])
 
     @page.update_attributes(params[:page])
     

@@ -1,0 +1,14 @@
+.full-image-bg
+  %h1.heading
+    Great!
+    %br
+  .dom-body-text
+    %p.p-1 Now, let's create a Bedside page. 
+    %p.p-1 This page will the place where family, friends, and visitors get info and updates.
+  = simple_form_for(@page, :html => {:class => 'form-vertical' }) do |f|
+    = f.error_notification
+    = f.input :hospital, :autofocus => true
+    = f.input :room
+    = f.input :tips
+    = f.button :submit, 'Create Page', :class => 'btn-primary'
+
