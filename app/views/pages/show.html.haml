@@ -1,1 +1,37 @@
-Pageid: #{@page.id}
+#page-container
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      %a.brand{:href => "#"}
+        %b Bedside
+      %ul.nav
+        %li
+          %a{:href => "#"} My Pages
+        %li
+          %a{:href => "#"} Settings
+        %li
+          %a{:href => "#"} Log out
+  .container-fluid.page-title-bar
+    .row-fluid
+      %span.span12
+      %h1.heading
+        Susan's Bedside Page
+        %button.btn.btn-primary.pull-right Invite People
+  .container-fluid.main-info
+    .row-fluid
+      %span.span4
+        #patient-photo
+      %span.span4
+        =render "location"
+        =render "tips"
+      
+      %span.span4
+        =render "overview"
+  .container-fluid.lower-container
+    .row-fluid
+      %span.span4
+        =render "visits"
+        =render "wishlist"
+        
+      %span.span8
+        =render "posts"
+        =render "comments"
