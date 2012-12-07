@@ -24,7 +24,7 @@ body {
 }
 .container-fluid {
   .row-fluid {
-    .span10 {
+    .span9, .span10 {
       .heading {
         &.heading-1 {
           margin: 70px 0px 10px 0px;
@@ -34,6 +34,7 @@ body {
           font-size: 53pt;
           color: #ffffff; }
         &.heading-2 {
+          font-size:28px;
           color: #ffffff; } }
       p {
         &.p-1 {
@@ -52,14 +53,16 @@ body {
         padding: 21px 0px 0px 0px; }
       &.span10-2 {
         padding: 18px 0px 0px 0px; } }
-    .span2 {
+    .span3 {
       .btn {
         &.btn-1 {
           padding: 14px 24px 14px 24px;
           font-family: "verdana";
           border-top: 1px solid rgba(0, 0, 0, 0.149);
           border-right: 1px solid rgba(0, 0, 0, 0.149);
-          border-left: 1px solid rgba(0, 0, 0, 0.149); }
+          border-left: 1px solid rgba(0, 0, 0, 0.149);
+          margin-bottom:10px;
+        }
         &.btn-2 {
           background: #ffffff;
           color:#666;
@@ -67,8 +70,8 @@ body {
           background-image: -webkit-linear-gradient(270deg, white 0%, #e6e6e6 100%);
           background-image: -o-linear-gradient(270deg, white 0%, #e6e6e6 100%);
           background-image: linear-gradient(180deg, white 0%, #e6e6e6 100%); } }
-      &.span2-1 {
-        padding: 66px 0px 0px 0px; } }
+      &.span3-1 {
+        padding: 40px 0px 0px 0px; } }
     .span6 {
       .dom-rect.dom-rect-1 {
         background: #666666;
@@ -95,11 +98,19 @@ body {
     &.row-fluid-3 {
       padding: 16px 0px 16px 0px; } }
   &.container-fluid-1 {
-    background: rgba(0, 0, 0, 0) url(image.png) repeat 0px 0px; 
+    background: rgba(0, 0, 0, 0) url(bedside_header.png) repeat 0px 0px; 
     background-size:1280px;
   }
   &.container-fluid-2 {
-    background: #6392bf; }
+    background: #6392bf;
+    color:#fff; 
+    .span9-1{
+      margin-top:16px;
+    }
+    .span3-1{
+      text-align:center;
+    }
+  }
   &.container-fluid-3 {
     background: #ffffff; }
   &.container-fluid-4 {

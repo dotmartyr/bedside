@@ -11,7 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121206211259) do
+ActiveRecord::Schema.define(:version => 20121207045302) do
+
+  create_table "page_participations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "page_id"
+    t.string   "permission_level"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "hospital"
+    t.string   "room"
+    t.text     "tips"
+    t.text     "overview"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "page_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -49,5 +74,22 @@ ActiveRecord::Schema.define(:version => 20121206211259) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "visits", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "page_id"
+    t.datetime "start_time"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "wishes", :force => true do |t|
+    t.string   "title"
+    t.boolean  "claimed"
+    t.integer  "page_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "claimed_by"
+  end
 
 end
