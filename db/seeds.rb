@@ -5,16 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-puts 'CREATING ROLES'
-Role.create([
-  { :name => 'admin' }, 
-  { :name => 'user' }, 
-  { :name => 'VIP' }
-], :without_protection => true)
 puts 'SETTING UP DEFAULT USER LOGIN'
-user = User.create! :name => 'First User', :email => 'user@example.com', :password => 'please', :password_confirmation => 'please'
+user = User.create! :name => 'Mario', :email => 'noc@tanookisuit.com', :password => 'testtest', :password_confirmation => 'testtest'
 puts 'New user created: ' << user.name
-user2 = User.create! :name => 'Second User', :email => 'user2@example.com', :password => 'please', :password_confirmation => 'please'
-puts 'New user created: ' << user2.name
-user.add_role :admin
-user2.add_role :VIP
+
+puts 'SETTING UP DEFAULT PAGE'
+page = Page.create!(hospital: "Toadstool General", room: "3", tips: "Take the 3rd tube to find the warp whistle", overview: "After a few months in Bowser's castle, the Princess is recovering well.")
+user.pages << page
+user.save
+
