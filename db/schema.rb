@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121207145857) do
+ActiveRecord::Schema.define(:version => 20121207224825) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -43,8 +43,10 @@ ActiveRecord::Schema.define(:version => 20121207145857) do
     t.string   "room"
     t.text     "tips"
     t.text     "overview"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "visiting_hours"
+    t.string   "patient_name"
   end
 
   create_table "posts", :force => true do |t|
