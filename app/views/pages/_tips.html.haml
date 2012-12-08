@@ -4,12 +4,14 @@
   Visitor's Tips
   %br/
 .tips-container
-  - if @page.tips.blank?
-    %p.info-text
-      Add some tips for visitors.
-    %p.info-text      (Suggestions: Parking hints, treats the nurses like, conversation topics, etc)
-  -else
+  - if !@page.tips.blank?
     #{simple_format(@page.tips, class: "info-text")}
+  -elsif @page.can_edit?(current_user)
+    %p
+      Add some tips for visitors.
+    %p
+      (Suggestions: Parking hints, treats the nurses like, conversation topics, etc)
+    
 .tips-editable-container.hidden  
   = form_for @page, remote: true, html: {id: "tips-edit-form"} do |f|
     %p

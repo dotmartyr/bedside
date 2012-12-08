@@ -4,29 +4,37 @@
   Location
   %br/
 .location-container
-  Hospital
-  %p.info-text
-    #{@page.hospital}
-    %br/
-  Room
-  %p.info-text
-    #{@page.room}
-    %br/
-  Visiting hours
-  #{simple_format(@page.visiting_hours, class: "info-text")}    
+  -if !@page.hospital.blank? 
+    Hospital
+    %p.info-text
+      #{@page.hospital}
+      %br/
+  -elsif @page.can_edit?(current_user)
+    %p
+      Add hospital info
+  -if !@page.room.blank?      
+    Room
+    %p.info-text
+      #{@page.room}
+      %br/
+  -elsif @page.can_edit?(current_user)
+    %p
+      Add room number
+  -if !@page.visiting_hours.blank?
+    Visiting hours
+    #{simple_format(@page.visiting_hours, class: "info-text")}    
+  -elsif @page.can_edit?(current_user)
+    %p
+      Add visiting hours
 .location-editable-container.hidden  
   = form_for @page, remote: true, html: {id: "location-edit-form"} do |f|
     %p
       %br
-        Hospital
       = f.text_field :hospital, placeholder: "hospital"
       %br
-      Room
+      = f.text_field :room, placeholder: "room"
       %br
-      = f.text_field :room, placeholder: "hospital"
-      %br
-      Visiting hours
-      = f.text_area :visiting_hours, placeholder: "e.g. \n Weekdays: 9 AM - 9 PM\n Weekends: 11AM - 5PM"
+      = f.text_area :visiting_hours, placeholder: "Visiting hours:\n e.g. \n Weekdays: 9 AM - 9 PM\n Weekends: 11AM - 5PM"
     = f.submit"Save", class: "btn", "data-attribute" => "location", "data-type" => "save-button"
     %button.btn{"data-attribute" => "location", "data-type" => "cancel-button"} 
       Cancel

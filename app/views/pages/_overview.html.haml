@@ -4,14 +4,15 @@
   How's #{@page.patient_name} doing?
   %br/
 .overview-container
-  -if @page.overview.blank?
-    %p.info-text 
-      Add some general info about the patient's condition.
-    %p.info-text
-      You'll be able to post updates below as the situation changes.
-  -else 
+  -if !@page.overview.blank?
     %p
       #{simple_format(@page.overview, class: "info-text")} 
+  -elsif @page.can_edit?(current_user) 
+    %p
+      Add some general info about the patient's condition.
+    %p
+      You'll be able to post updates below as the situation changes.  
+
 .overview-editable-container.hidden  
   = form_for @page, remote: true, html: {id: "overview-edit-form"} do |f|
     %p
