@@ -10,7 +10,7 @@
       You'll be able to post updates below as the situation changes.
   -else 
     %p
-      #{@page.overview} 
+      #{simple_format(@page.overview)} 
 .overview-editable-container.hidden  
   = form_for @page, remote: true, html: {id: "overview-edit-form"} do |f|
     %p

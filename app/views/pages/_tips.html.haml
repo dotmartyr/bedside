@@ -8,7 +8,7 @@
       Add some tips for visitors.
     %p.info-text      (Suggestions: Parking hints, treats the nurses like, conversation topics, etc)
   -else
-    #{@page.tips}
+    #{simple_format(@page.tips)}
 .tips-editable-container.hidden  
   = form_for @page, remote: true, html: {id: "tips-edit-form"} do |f|
     %p
