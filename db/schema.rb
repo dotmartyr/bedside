@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121207224825) do
+ActiveRecord::Schema.define(:version => 20121208203331) do
 
   create_table "comments", :force => true do |t|
     t.integer  "commentable_id",   :default => 0
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(:version => 20121207224825) do
   create_table "page_participations", :force => true do |t|
     t.integer  "user_id"
     t.integer  "page_id"
-    t.string   "permission_level"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "permission_level", :default => "follower"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
   end
 
   create_table "pages", :force => true do |t|
