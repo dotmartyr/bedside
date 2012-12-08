@@ -15,7 +15,8 @@ class PagesController < ApplicationController
   def create
     @page = current_user.pages.new(params[:page])
     if @page.save
-      current_user.pages << @page
+      current_user.page_participations << PageParticipation.create(page_id: @page.id, permission_level: PageParticipation::PermissionLevel::OWNER)
+      current_user.save
       respond_with(@page)
     else
       respond_with(@page.errors)
