@@ -1,11 +1,11 @@
 %button.btn.btn-mini.pull-right{"data-attribute" => "overview", "data-type" => "edit-button"} Edit
 %h4.heading.heading-1
-  How's Susan doing?
+  How's #{@page.patient_name} doing?
   %br/
 .overview-container
   -if @page.overview.blank?
     %p.info-text 
-      Add some general info about Susan's condition.
+      Add some general info about the patient's condition.
     %p.info-text
       You'll be able to post updates below as the situation changes.
   -else 
