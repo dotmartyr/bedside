@@ -1,5 +1,5 @@
 //re-render only the sections that were updated when a Page was updated.
--if ["room","hospital"].any?{|k| @page.previous_changes.keys.include?(k)}
+-if ["room","hospital","visiting_hours"].any?{|k| @page.previous_changes.keys.include?(k)}
   $("#location-partial-container").html("#{escape_javascript(render 'location')}");
 
 -if ["tips"].any?{|k| @page.previous_changes.keys.include?(k)}
