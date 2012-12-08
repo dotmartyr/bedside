@@ -1,6 +1,21 @@
-%button.btn.btn-mini.pull-right Edit this
+%button.btn.btn-mini.pull-right{"data-attribute" => "overview", "data-type" => "edit-button"} Edit this
 %h4.heading.heading-1
   How's Susan doing?
   %br/
-%p.p-2 Add some general info about Susan's condition.
-%p.p-2 You'll be able to post updates below as the situation changes.
+.overview-container
+  -if @page.overview.blank?
+    %p.info-text 
+      Add some general info about Susan's condition.
+    %p.info-text
+      You'll be able to post updates below as the situation changes.
+  -else 
+    %p
+      #{@page.overview} 
+.overview-editable-container.hidden  
+  = form_for @page, remote: true, html: {id: "overview-edit-form"} do |f|
+    %p
+      = f.text_area :overview, placeholder: "Add some general info about Susan's condition."
+      %br
+      = f.submit"Save", class: "btn", "data-attribute" => "overview", "data-type" => "save-button"
+      %button.btn{"data-attribute" => "overview", "data-type" => "cancel-button"} 
+        Cancel    

@@ -1,6 +1,19 @@
-%button.btn.btn-mini.pull-right Edit this
+%button.btn.btn-mini.pull-right{"data-attribute" => "tips", "data-type" => "edit-button"} Edit this
 %h4.heading.heading-1
   Visitor's Tips
   %br/
-%p.p-2 Add some tips for visitors.
-%p.p-2 (Suggestions: Parking hints, treats the nurses like, conversation topics, etc)
+.tips-container
+  - if @page.tips.blank?
+    %p.info-text
+      Add some tips for visitors.
+    %p.info-text      (Suggestions: Parking hints, treats the nurses like, conversation topics, etc)
+  -else
+    #{@page.tips}
+.tips-editable-container.hidden  
+  = form_for @page, remote: true, html: {id: "tips-edit-form"} do |f|
+    %p
+      = f.text_area :tips, placeholder: "(Suggestions: Parking hints, treats the nurses like, conversation topics, etc)"
+      %br
+    = f.submit"Save", class: "btn", "data-attribute" => "tips", "data-type" => "save-button"
+    %button.btn{"data-attribute" => "tips", "data-type" => "cancel-button"} 
+      Cancel

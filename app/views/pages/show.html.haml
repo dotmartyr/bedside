@@ -21,17 +21,24 @@
       %span.span4
         #patient-photo
       %span.span4
-        =render "location"
-        =render "tips"
+        #location-partial-container.detials-partial-container
+          =render "location"
+        #tips-partial-container.detials-partial-container
+          =render "tips"
       
       %span.span4
-        =render "overview"
+        #overview-partial-container.detials-partial-container
+          =render "overview"
   .container-fluid.lower-container
     .row-fluid
       %span.span4
-        =render "visits"
-        =render "wishlist"
+        #visits
+          =render "visits"
+        #wishlist
+          =render "wishlist"
         
       %span.span8
-        =render "posts"
-        =render "comments"
+        #posts      
+          =render "posts"
+        #comments
+          =render "comments"

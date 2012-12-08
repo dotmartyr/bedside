@@ -1,0 +1,4 @@
+//re-render the sections that may be updated when a page updates.
+$("#location-partial-container").html("#{escape_javascript(render 'location')}");
+$("#tips-partial-container").html("#{escape_javascript(render 'tips')}");
+$("#overview-partial-container").html("#{escape_javascript(render 'overview')}");

@@ -1,8 +1,25 @@
-%button.btn.btn-mini.pull-right Edit this
+%button.btn.btn-mini.pull-right{"data-attribute" => "location", "data-type" => "edit-button"} Edit this
 %h4.heading.heading-1
   Location
   %br/
-%p.p-1
-  Ellis Hospital
-  %br/
-%p.p-1 Room C403
+.location-container
+  Hospital
+  %p.info-text
+    #{@page.hospital}
+    %br/
+  Room
+  %p.info-text
+    #{@page.room}
+.location-editable-container.hidden  
+  = form_for @page, remote: true, html: {id: "location-edit-form"} do |f|
+    %p
+      %br
+        Hospital
+      = f.text_field :hospital, placeholder: "hospital"
+      %br
+      Room
+      %br
+      = f.text_field :room, placeholder: "hospital"
+    = f.submit"Save", class: "btn", "data-attribute" => "location", "data-type" => "save-button"
+    %button.btn{"data-attribute" => "location", "data-type" => "cancel-button"} 
+      Cancel
