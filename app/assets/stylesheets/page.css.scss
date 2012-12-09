@@ -1,4 +1,7 @@
 #page-container{
+  .icon{
+    background-image:none;
+  }
   .detials-partial-container{
     textarea{
       width: 300px;
@@ -42,7 +45,7 @@
   .icon-1 {
     color: #ffffff;
     font-size: 24px;
-    margin: 2px 6px 0px 2px;
+    margin: 2px 6px 0px 4px;
     height: 24px;
     width: 24px; 
   }
@@ -72,7 +75,7 @@
     margin: -1px 2px 0px 0px; 
   } 
   .lower-heading {
-    padding: 2px;
+    padding: 2px 0 4px 0;
     margin: 0px 0px 6px 0px;
     background: #64b1ff;
     color: #ffffff;
