@@ -7,6 +7,8 @@ class Page < ActiveRecord::Base
   has_many :visits
   has_many :wishes
 
+  acts_as_commentable
+
   def can_edit?(user)
     pp = user.page_participations.find_by_page_id(self.id)
 
