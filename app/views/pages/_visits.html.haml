@@ -2,35 +2,17 @@
 %button.btn.btn-mini.pull-right.btn-1 Edit Visiting Hours
 %h4.heading.lower-heading
   Visitor Schedule
-  %br/
-%table.table.table-striped.table-condensed
-  %thead
-    %tr
-      %th
-        Tuesday
-        %button.btn.pull-right.btn-mini Add yourself
-  %tbody
-    %tr
-      %td 9am - James doe
-    %tr
-      %td
-        1pm - Jane Doe
-        %br/
-%table.table.table-striped.table-condensed
-  %thead
-    %tr
-      %th
-        Wednesday
-        %button.btn.pull-right.btn-mini Add yourself
-  %tbody
-    %tr
-      %td No one's visiting yet
-%table.table.table-striped.table-condensed
-  %thead
-    %tr
-      %th
-        Thursday
-        %button.btn.pull-right.btn-mini Add yourself
-  %tbody
-    %tr
-      %td No one's visiting yet
+.inner-container
+  -@schedule.each do |k,day|
+    %table.table.table-striped.table-condensed
+      %thead
+        %tr
+          %th
+            =day[:date].strftime('%A, %b %e')
+            %button.btn.pull-right.btn-mini Add yourself
+      -if !day[:visits].blank?
+        %tbody
+          -day[:visits].each do |v|
+            %tr
+              %td
+                #{v.start_time.strftime('%l %p')} - #{v.user.name}

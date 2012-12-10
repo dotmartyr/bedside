@@ -5,12 +5,12 @@
 
 %h4.heading.lower-heading
   Wishlist
-  %br/
-%table.table.table-striped.table-condensed
-  %tbody
-    -@page.wishes.each do |wish|
-      %tr
-        %td
-          %label.checkbox
-            %input{:type => "checkbox", :value => ""}/
-            %span #{wish.title}
+.inner-container
+  %table.table.table-striped.table-condensed
+    %tbody
+      -@page.wishes.each do |wish|
+        %tr
+          %td
+            %label.checkbox
+              %input{:type => "checkbox", :value => ""}/
+              %span #{wish.title}

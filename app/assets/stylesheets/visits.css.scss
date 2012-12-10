@@ -1,7 +1,11 @@
-// Place all the styles related to the Wishes controller here.
+// Place all the styles related to the Visits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#wishlist{
+#visits{
+  table{
+    margin-bottom:10px;
+    border-bottom:1px solid #ccc;
+  }
   .inner-container{
     max-height:250px;
     overflow-y:scroll;
