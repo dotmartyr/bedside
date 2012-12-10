@@ -14,11 +14,16 @@ class VisitsController < ApplicationController
   end
 
   def new
+    @hours_dropdown = hours_dropdown
     respond_with(@visit = @page.visits.new)   
   end 
 
   def create
-    @visit = @page.visits.new(params[:visit])
+    @visit = @page.visits.new
+    day = params[:visit][:start_day]
+    hour = params[:visit][:start_hour]
+
+    @visit.start_time = "#{day} #{hour}".to_datetime
     @visit.user_id = current_user.id
     if @visit.save
       @schedule = @page.get_schedule
@@ -35,6 +40,17 @@ class VisitsController < ApplicationController
     respond_with([@page,@visit])
   end
 
+  def hours_dropdown
+    hours = []
+    (5..11).each do |h|
+      hours << h.to_s + "am"
+    end
+    hours << "12pm"
+    (1..11).each do |h|
+      hours << h.to_s + "pm"
+    end
+    hours
+  end
 
   private
     def find_page

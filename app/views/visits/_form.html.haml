@@ -7,7 +7,9 @@
 
     .modal-body
       = f.error_notification
-      = f.input :start_time, :label => 'Time'
+      = f.input :start_hour, :label => 'Time', :collection => @hours_dropdown
+      = f.hidden_field :start_day, :value => params[:day]
+      
     .modal-footer
       %a.btn{:href=>"#",'data-dismiss'=>"modal"} Close
       = f.button :submit, 'Add your visit', :class => 'btn-primary'

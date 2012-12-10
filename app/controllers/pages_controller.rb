@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   
   def show
     @page = current_user.pages.find(params[:id])
-    @schedule = get_schedule
+    @schedule = @page.get_schedule
 
     respond_with(@page)
   end
@@ -32,24 +32,6 @@ class PagesController < ApplicationController
     respond_with(@page)
   end
 
-  def next_two_weeks
-    days = {}
-    (0..13).each do |offset|
-      d = Time.now + offset.days
-      daystring = d.strftime('%Y%m%d')
-      days[daystring] = {:date => d, :visits => []}
-    end
-    days
-  end
-
-  def get_schedule
-    @visits = @page.visits.where('start_time < ?', Time.now + 13.days)
-    days = next_two_weeks
-    @visits.each do |v|
-      daystring = v.start_time.strftime('%Y%m%d')
-      days[daystring][:visits] << v
-    end
-    days
-  end
+  
 
 end
