@@ -7,6 +7,7 @@
         = stylesheet_link_tag "application", :media => "all"
         %link{:href => "https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700", :media => "screen", :rel => "stylesheet", :type => "text/css"}/
         = javascript_include_tag "application"
+        = filepicker_js_include_tag
         = csrf_meta_tags
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}

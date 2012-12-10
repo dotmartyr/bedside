@@ -72,5 +72,10 @@ module Bedside
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Set this on the command line!
+    # Example: export FILEPICKER_API_KEY=XXXXXXXXXXXXXX
+    config.filepicker_rails.api_key = ENV['FILEPICKER_API_KEY']
+
   end
 end

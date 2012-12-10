@@ -34,6 +34,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'activeadmin'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
+gem 'filepicker-rails'
 group :development, :test do
   gem "pry"
   gem 'mailcatcher'

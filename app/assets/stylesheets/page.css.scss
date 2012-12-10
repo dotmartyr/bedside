@@ -9,16 +9,13 @@
     }
   }
   #patient-photo {
-    background: #828282;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    -o-box-shadow: none;
-    box-shadow: none;
+    background: #fff;
     border-radius: 0px;
     margin: 0px;
     border: none;
-    width: 295px;
-    height: 256px; 
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    width: 93%;
+    padding: 10px;
   }
  .btn-1 {
     margin: 3px 2px 0px 0px; 
