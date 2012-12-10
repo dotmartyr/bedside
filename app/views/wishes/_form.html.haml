@@ -1,0 +1,13 @@
+.modal.fade.in
+  = simple_form_for([@page,@wish], :remote => true, :html => {:class => 'form-vertical' }) do |f|
+    .modal-header
+      %button.close{'type'=>'button','data-dismiss'=>"modal", 'aria-hidden'=>'true'}
+        =raw '&times;'
+      %h3 Add a new wishlist item
+
+    .modal-body
+      = f.error_notification
+      = f.input :title, :label => 'Description'
+    .modal-footer
+      %a.btn{:href=>"#",'data-dismiss'=>"modal"} Close
+      = f.button :submit, 'Add Item', :class => 'btn-primary'

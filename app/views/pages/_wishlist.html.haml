@@ -1,24 +1,16 @@
 %i.icon.icon-gift.pull-left.icon-2
-%button.btn.btn-mini.pull-right.btn-1
-  Add Item
-  %br/
+
+=link_to 'Add Item', "/pages/#{@page.id}/wishes/new", {:remote => true, :class => "btn btn-mini pull-right btn-1", :id => 'add_page_wish'}
+
+
 %h4.heading.lower-heading
   Wishlist
   %br/
 %table.table.table-striped.table-condensed
   %tbody
-    %tr
-      %td
-        %label.checkbox
-          %input{:type => "checkbox", :value => ""}/
-          %span Portable DVD Player
-    %tr
-      %td
-        %label.checkbox
-          %input{:type => "checkbox", :value => ""}/
-          %span checkbox!
-    %tr
-      %td
-        %label.checkbox
-          %input{:type => "checkbox", :value => ""}/
-          %span checkbox!
+    -@page.wishes.each do |wish|
+      %tr
+        %td
+          %label.checkbox
+            %input{:type => "checkbox", :value => ""}/
+            %span #{wish.title}

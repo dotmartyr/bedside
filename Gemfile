@@ -33,6 +33,7 @@ gem 'possessive'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'activeadmin'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 group :development, :test do
   gem "pry"
   gem 'mailcatcher'

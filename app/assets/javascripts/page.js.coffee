@@ -23,6 +23,8 @@ ready = ->
   
     toggleViewEdit(attr)
   )
+
+
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
