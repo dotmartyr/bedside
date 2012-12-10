@@ -1,4 +1,14 @@
 Bedside::Application.routes.draw do
+  get "visits/show"
+
+  get "visits/edit"
+
+  get "visits/new"
+
+  get "visits/create"
+
+  get "visits/update"
+
   authenticated :user do
     root :to => 'home#index'
   end
