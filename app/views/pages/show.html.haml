@@ -9,7 +9,7 @@
         %li
           %a{:href => "#"} Settings
         %li
-          %a{:href => "#"} Log out
+          = link_to 'Logout', destroy_user_session_path, :method=>'delete'
   .container-fluid.page-title-bar
     .row-fluid
       %span.span12
