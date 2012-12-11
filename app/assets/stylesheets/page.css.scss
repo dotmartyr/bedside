@@ -8,6 +8,18 @@
       height: 100px;
     }
   }
+  #posts{
+    .well{
+      padding: 3px 10px;
+      margin-bottom: 5px;
+    }
+  }
+  #comments{
+    .well{
+      padding: 3px 10px;
+      margin-bottom: 5px;
+    }
+  }
   #patient-photo {
     background: #fff;
     border-radius: 0px;
@@ -147,7 +159,7 @@
         text-shadow: none;
         border-radius: 3px;
         border: 1px solid #cfcfcf;
-        width: 600px;
+        width: 520px;
         height: 38px; 
       }
 

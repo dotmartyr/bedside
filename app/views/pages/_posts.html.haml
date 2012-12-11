@@ -1,8 +1,23 @@
-%button.btn.btn-mini.pull-right.btn-2
-  Post a new update
-  %br/
 %i.icon.icon-bullhorn.pull-left.icon-3
 %h4.heading.lower-heading
   Latest Update
   %br/
-%p No updates yet
+%p
+  - if @page.posts.empty?
+    No updates yet. 
+  -else
+    .well
+      %p
+        #{simple_format(@page.posts.last.body, class: "info-text")}
+    %p
+      Posted on 
+      = @page.posts.last.created_at.strftime("%m/%d/%Y")
+
+
+- if @page.can_edit?(current_user)
+  = simple_form_for([@page, Post.new], :remote => true, :html => {:class => 'form-vertical' }) do |f|
+    = f.input :body, as: "text", :placeholder => "Provide an update on #{@page.patient_name.possessive} condition", :input_html => { :class => 'textarea' }, label: false 
+
+    =f.button :submit, "Update", :class => "btn btn-mini btn-3"
+
+
