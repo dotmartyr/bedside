@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     
+    respond_with @user, status: :unauthorized if @user.id != current_user.id
 
     if params[:user][:password].blank? 
       params[:user].delete(:password)
