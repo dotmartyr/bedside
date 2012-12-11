@@ -10,7 +10,7 @@ user = User.create! :name => 'Mario', :email => 'noc@tanookisuit.com', :password
 puts 'New user created: ' << user.name
 
 puts 'SETTING UP DEFAULT PAGE'
-page = Page.create!(hospital: "Toadstool General", room: "3", tips: "Take the 3rd tube to find the warp whistle", overview: "After a few months in Bowser's castle, the Princess is recovering well.")
+page = Page.create!(patient_name: "Princess", hospital: "Toadstool General", room: "3", tips: "Take the 3rd tube to find the warp whistle", overview: "After a few months in Bowser's castle, the Princess is recovering well.")
 user.pages << page
 user.save
 
