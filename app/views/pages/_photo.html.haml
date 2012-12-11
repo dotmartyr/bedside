@@ -3,6 +3,7 @@
     =filepicker_image_tag @page.avatar_url, w: 160, h: 160, fit: 'clip'
   #upload-form
     = simple_form_for @page do |f|
-      =f.label :avatar_url, "Upload a photo of #{@page.patient_name}"
-      =f.filepicker_field :avatar_url, onchange: 'window.Bedside.updatePhoto(event);' 
-      =f.submit
+      -if @page.avatar_url
+        =f.filepicker_field :avatar_url, button_text: "Change photo", button_class:"btn", onchange: 'window.Bedside.updatePhoto(event);' 
+      -else
+        =f.filepicker_field :avatar_url, button_text: "Upload a photo", button_class:"btn", onchange: 'window.Bedside.updatePhoto(event);'

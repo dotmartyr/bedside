@@ -27,9 +27,8 @@ ready = ->
     toggleViewEdit(attr)
   )
   window.Bedside.updatePhoto = (event) ->
-    #TODO: update the page with AJAX here, which returns the 
-    #html and js to update the photo area
-    console.log(event)
+    #TODO: update only the relevant partial here
+    $('#upload-form form').submit();
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
