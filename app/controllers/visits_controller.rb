@@ -33,6 +33,15 @@ class VisitsController < ApplicationController
     end
   end
 
+  def destroy
+    
+    @visit = @page.visits.find(params[:id])
+
+    @visit.delete if current_user.id == @visit.user_id or @page.can_edit?(current_user)
+
+    @schedule = @page.get_schedule
+  end
+
   def update
     @visit = @page.visits.find(params[:id])
     @visit.update_attributes(params[:visit])

@@ -19,6 +19,7 @@ class WishesController < ApplicationController
 
   def create
     @wish = @page.wishes.new(params[:wish])
+    
     if @wish.save
       respond_with(@wish)
     else
@@ -32,6 +33,15 @@ class WishesController < ApplicationController
     
     respond_with([@page,@wish])
   end
+
+  def destroy
+    
+    @wish = @page.wishes.find(params[:id])
+
+    @wish.delete if @page.can_edit?(current_user)
+
+  end
+
 
   private
     def find_page
