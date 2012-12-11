@@ -29,8 +29,11 @@ class WishesController < ApplicationController
 
   def update
     @wish = @page.wishes.find(params[:id])
-    @wish.update_attributes(params[:wish])
-    
+    if params[:wish][:claimed] == "1"
+      @wish.update_attributes(:claimed_by => current_user.id)
+    else
+      @wish.update_attributes(:claimed_by => nil)
+    end
     respond_with([@page,@wish])
   end
 

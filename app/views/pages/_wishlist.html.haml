@@ -9,10 +9,13 @@
     %tbody
       -@page.wishes.each do |wish|
         %tr
-          %td
-            %label.checkbox
-              %input{:type => "checkbox", :value => ""}/
-              %span #{wish.title}
-              - if @page.can_edit?(current_user)
-                %span.pull-right
-                  =link_to 'remove', "/pages/#{@page.id}/wishes/#{wish.id}", {:remote => true, :method => "delete", :class => "pull-right", :confirm => "Are you sure that you want to remove this wish?"}
+          %td.wish
+            - if @page.can_edit?(current_user)
+              %span.pull-right
+                =link_to 'remove', "/pages/#{@page.id}/wishes/#{wish.id}", {:remote => true, :method => "delete", :class => "pull-right", :confirm => "Are you sure that you want to remove this wish?"}
+            =simple_form_for [@page,wish], :remote => true do |f|
+              =f.input :claimed, :label => wish.title, :inline_label => true
+              -if wish.claimed_by
+                .claimed
+                  Claimed by #{wish.user.name}
+              

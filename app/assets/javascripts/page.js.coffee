@@ -26,6 +26,12 @@ ready = ->
   
     toggleViewEdit(attr)
   )
+
+  #register live handler for the wishlist checkboxes
+  $(".wish input").live "click", (event) ->
+    console.log "got the wishlist click"
+    console.log $(event.target).parents("form").submit()
+
   window.Bedside.updatePhoto = (event) ->
     #TODO: update only the relevant partial here
     $('#upload-form form').submit();
