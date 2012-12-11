@@ -1,9 +1,12 @@
 #patient-photo
   -if @page.avatar_url
     =filepicker_image_tag @page.avatar_url, w: 160, h: 160, fit: 'clip'
-  #upload-form
-    = simple_form_for @page do |f|
-      -if @page.avatar_url
-        =f.filepicker_field :avatar_url, button_text: "Change photo", button_class:"btn", onchange: 'window.Bedside.updatePhoto(event);' 
-      -else
-        =f.filepicker_field :avatar_url, button_text: "Upload a photo", button_class:"btn", onchange: 'window.Bedside.updatePhoto(event);'
+  -else
+    %img{src: "/assets/no-profile-image.jpeg"}
+  - if @page.can_edit?(current_user)
+    #upload-form
+      = simple_form_for @page do |f|
+        -if @page.avatar_url
+          =f.filepicker_field :avatar_url, button_text: "Change photo", button_class:"btn", onchange: 'window.Bedside.updatePhoto(event);' 
+        -else
+          =f.filepicker_field :avatar_url, button_text: "Upload a photo", button_class:"btn", onchange: 'window.Bedside.updatePhoto(event);'
