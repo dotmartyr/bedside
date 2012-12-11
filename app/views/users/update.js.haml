@@ -1,0 +1,4 @@
+- if @user.errors.empty?
+  $("#pageModal").modal('toggle');
+-else
+  $("#pageModal").html("#{escape_javascript(render 'form')}");
