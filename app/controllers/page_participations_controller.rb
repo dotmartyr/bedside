@@ -13,11 +13,14 @@ class PageParticipationsController < ApplicationController
   end 
 
   def create
-    invitee = User.invite!({:email => params[:page_participation][:email], 
-      :name => params[:page_participation][:name]}, 
-      current_user)
-    
-    @page_participation = @page.page_participations.new(:user_id => invitee.id, :permission_level => PageParticipation::PermissionLevel::FOLLOWER)
+    if @user = User.find_by_email(params[:page_participation][:email])
+      @page_participation = @page.page_participations.new(:user_id => @user.id, :permission_level => PageParticipation::PermissionLevel::FOLLOWER)
+    else
+      invitee = User.invite!({:email => params[:page_participation][:email], 
+        :name => params[:page_participation][:name]}, 
+        current_user)
+      @page_participation = @page.page_participations.new(:user_id => invitee.id, :permission_level => PageParticipation::PermissionLevel::FOLLOWER)
+    end
     if @page_participation.save
       respond_with(@page_participation = @page.page_participations.new)
     else
