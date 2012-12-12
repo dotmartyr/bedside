@@ -14,5 +14,6 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :visits
   has_many :wishes, :foreign_key => 'claimed_by'
+  has_many :comments
   
 end

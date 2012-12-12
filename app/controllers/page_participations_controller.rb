@@ -13,12 +13,11 @@ class PageParticipationsController < ApplicationController
   end 
 
   def create
-    binding.pry
-    current_user.invite!(:email => params[:page_participation][:email], :name => params[:page_participation][:name])
+    invitee = User.invite!(:email => params[:page_participation][:email], :name => params[:page_participation][:name])
     
     # TODO: What do we need to create a user? Just email, but we need to 
     # protect the main app 
-    @page_participation = @page.page_participations.new(:user => @user, :permissions => 'admin')
+    @page_participation = @page.page_participations.new(:user_id => invitee.id, :permission_level => PageParticipation::PermissionLevel::FOLLOWER)
     if @page_participation.save
       respond_with(@page_participation)
     else
