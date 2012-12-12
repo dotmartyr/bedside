@@ -21,7 +21,7 @@
       %span.span12
         %h1.heading
           #{@page.patient_name.possessive} Bedside Page
-          %button.btn.btn-primary.pull-right Invite People
+          =link_to 'Invite people', "/pages/#{@page.id}/page_participations", {:remote => true, :class => "btn btn-primary pull-right", :id => 'add_page_participation'} if @page.can_edit?(current_user)
   .container-fluid.main-info
     .row-fluid
       %span.span4

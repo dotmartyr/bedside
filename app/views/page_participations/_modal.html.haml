@@ -1,0 +1,24 @@
+.modal.fade.in
+  
+  .modal-header
+    %button.close{'type'=>'button','data-dismiss'=>"modal", 'aria-hidden'=>'true'}
+      =raw '&times;'
+    %h3 Invited People
+
+  .modal-body
+    %table.table.table-striped
+      %tbody
+        -@page.users.each do |u|
+          %tr
+            %td.user_name
+              =u.name
+            %td.user_email
+              =u.email
+    = simple_form_for([@page,@page_participation], :remote => true) do |f|
+      = f.error_notification
+      = f.input :name
+      = f.input :email
+      = f.button :submit, 'Add Item', :class => 'btn-primary'
+  .modal-footer
+    %a.btn{:href=>"#",'data-dismiss'=>"modal"} Close
+    

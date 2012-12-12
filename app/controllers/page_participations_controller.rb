@@ -1,21 +1,19 @@
 class PageParticipationsController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :find_page
   respond_to :html, :js
   
   def show
-    @page = current_user.pages.find(params[:id])
-    @page_participations = @page.page_participations
+    @page_participations = @page.page_participations.find(params[:id])
     respond_with(@page_participations)
   end
 
   def new
-    @page = current_user.pages.find(params[:id])
     respond_with(@page_participation = @page.page_participations.new)   
   end 
 
   def create
-    @page = current_user.pages.find(params[:id])
-    @user = User.create(params[:user])
+    @user = User.create(:email => params[:page_participation][:email], :name => params[:page_participation][:name])
     binding.pry
     # TODO: What do we need to create a user? Just email, but we need to 
     # protect the main app 
@@ -28,11 +26,18 @@ class PageParticipationsController < ApplicationController
   end
 
   def update
-    @page = current_user.pages.find(params[:id])
-
-    @page.update_attributes(params[:page])
+    @page_participations = @page.page_participations.find(params[:id])
+    @page_participation.update_attributes(params[:page_participation])
     
     respond_with(@page)
   end
 
+  def index
+    respond_with(@page_participation = @page.page_participations.new)   
+  end
+
+  private
+    def find_page
+      @page = current_user.pages.find(params[:page_id])
+    end
 end
