@@ -73,6 +73,9 @@ module Bedside
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # Don't initialze (and hit the database) on precompile for heroku
+    config.assets.initialize_on_precompile = false
+
     # Set this on the command line!
     # Example: export FILEPICKER_API_KEY=XXXXXXXXXXXXXX
     config.filepicker_rails.api_key = ENV['FILEPICKER_API_KEY']
