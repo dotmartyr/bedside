@@ -1,0 +1,18 @@
+.full-image-bg
+  #invite-info
+    %h2
+      You've been invited to #{resource.page_participations.first.page.patient_name}'s bedside page. 
+    %h3
+      Bedside helps you work together to make #{resource.page_participations.first.page.patient_name}'s stay better.
+  #getting-started-form
+    %h2
+      = t 'devise.invitations.edit.header'
+
+    = simple_form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| 
+      = devise_error_messages! 
+      = f.hidden_field :invitation_token 
+
+      = f.input :password 
+      = f.input :password_confirmation 
+
+      = f.submit t("devise.invitations.edit.submit_button") 
