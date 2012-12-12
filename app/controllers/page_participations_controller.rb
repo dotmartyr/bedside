@@ -13,7 +13,9 @@ class PageParticipationsController < ApplicationController
   end 
 
   def create
-    invitee = User.invite!(:email => params[:page_participation][:email], :name => params[:page_participation][:name])
+    invitee = User.invite!({:email => params[:page_participation][:email], 
+      :name => params[:page_participation][:name]}, 
+      current_user)
     
     # TODO: What do we need to create a user? Just email, but we need to 
     # protect the main app 
