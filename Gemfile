@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.9'
-gem 'sqlite3'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -42,4 +41,5 @@ group :development, :test do
   gem 'guard'
   gem 'guard-spork'
   gem 'guard-bundler'
+  gem 'sqlite3'
 end
