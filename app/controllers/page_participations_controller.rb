@@ -17,8 +17,6 @@ class PageParticipationsController < ApplicationController
       :name => params[:page_participation][:name]}, 
       current_user)
     
-    # TODO: What do we need to create a user? Just email, but we need to 
-    # protect the main app 
     @page_participation = @page.page_participations.new(:user_id => invitee.id, :permission_level => PageParticipation::PermissionLevel::FOLLOWER)
     if @page_participation.save
       respond_with(@page_participation)
