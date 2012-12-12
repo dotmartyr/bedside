@@ -1,1 +1,3 @@
 $("#pageModal").html("#{escape_javascript(render 'modal')}");
+$("#modal-alert").fadeIn()
+setTimeout(function(){$("#modal-alert").fadeOut()}, 5000);

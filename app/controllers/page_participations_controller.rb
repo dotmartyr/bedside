@@ -19,7 +19,7 @@ class PageParticipationsController < ApplicationController
     
     @page_participation = @page.page_participations.new(:user_id => invitee.id, :permission_level => PageParticipation::PermissionLevel::FOLLOWER)
     if @page_participation.save
-      respond_with(@page_participation)
+      respond_with(@page_participation = @page.page_participations.new)
     else
       respond_with(@page_participation.errors)
     end

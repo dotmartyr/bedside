@@ -33,3 +33,15 @@
 .hidden{
   display: none;
 }
+
+#modal-alert{
+  display:none;
+  position:absolute;
+  top: 58px;
+  right: 15px;
+  text-align: center;
+  padding: 4px;
+}
+.scrollable{
+  overflow-y:auto;
+}
