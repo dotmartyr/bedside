@@ -1,4 +1,5 @@
 Bedside::Application.routes.draw do
+
   get "visits/show"
 
   get "visits/edit"

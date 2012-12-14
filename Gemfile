@@ -36,6 +36,13 @@ gem 'activeadmin'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'filepicker-rails'
+
+gem 'resque'
+gem 'resque_mailer'
+gem 'whenever', :require => false
+gem "devise-async"
+
+
 group :development, :test do
   gem "pry"
   gem 'mailcatcher'

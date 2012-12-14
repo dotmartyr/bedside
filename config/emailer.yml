@@ -1,0 +1,21 @@
+development:
+  smtp_url: localhost
+  smtp_port: 1025
+  smtp_user: noc@bedsideapp.com
+  smtp_password: testtest
+  smtp_domain: localhost
+  authentication: plain
+staging:
+  smtp_url: smtp.mailgun.org
+  smtp_port: 587
+  smtp_user: 
+  smtp_password: 
+  smtp_domain: 
+  authentication: plain
+production:
+  smtp_url: smtp.mailgun.org
+  smtp_port: 587
+  smtp_user: 
+  smtp_password: 
+  smtp_domain: 
+  authentication: plain
