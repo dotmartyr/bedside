@@ -5,3 +5,5 @@
 require File.expand_path('../config/application', __FILE__)
 
 Bedside::Application.load_tasks
+
+task "resque:setup" => :environment
