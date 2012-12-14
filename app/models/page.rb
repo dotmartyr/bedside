@@ -26,8 +26,10 @@ class Page < ActiveRecord::Base
   end
 
   def get_schedule
-    visits = self.visits.where('start_time < ?', Time.now + 13.days)
+    today = 
+    visits = self.visits.where('start_time < ? AND start_time > ?', Time.now + 13.days, Time.now.beginning_of_day)
     days = self.next_two_weeks
+
     visits.each do |v|
       daystring = v.start_time.strftime('%Y%m%d')
       days[daystring][:visits] << v
