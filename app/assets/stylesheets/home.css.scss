@@ -96,7 +96,7 @@ body {
       background: rgba(0, 0, 0, 0) url(bedside_header.png) repeat 0px 0px; 
       background-size:1280px;
     }
-    &.container-fluid-2 {
+    &.lower-cta, &.upper-cta {
       background: #6392bf;
       color:#fff; 
       .span9-1{
@@ -120,7 +120,7 @@ body {
           font-family: 'droid sans';
           font-size: 12pt;
           line-height: 1.6; } } }
-    &.container-fluid-2 .row-fluid.row-fluid-5 {
+    &.lower-cta .row-fluid.row-fluid-5 {
       padding: 0px 0px 34px 0px; }
     &.container-fluid-3 .row-fluid {
       .span6 {
@@ -162,9 +162,21 @@ body {
           font-size: 9pt;
           text-align: center;
           color: #ffffff; } } }
-    &.container-fluid-2 .row-fluid {
-      .lower-cta {
+    &.lower-cta .row-fluid {
+      .span4 {
         padding: 59px 0px 0px 0px;
+        text-align:center;
+        .get-started-button {
+          padding: 24px 48px 24px 48px;
+          font-family: "verdana"; } }
+      .span8 {
+        padding: 21px 0px 0px 0px;
+        .heading {
+          color: #ffffff; } } }
+    &.upper-cta .row-fluid {
+      .span4 {
+        padding: 59px 0px 0px 0px;
+        text-align:center;
         .get-started-button {
           padding: 24px 48px 24px 48px;
           font-family: "verdana"; } }
@@ -193,8 +205,32 @@ body {
     padding: 4px;
     background-color:#fff;
   }
-  .lower-cta{
-    text-align:center;
+  .tanooki-suit{
+    padding-top:20px;
+    position:relative;
+    .top-edge{
+      background:image-url('bg_footer.png') 0 0 repeat-x #6392bf;
+      height:10px;
+      width:100%;
+    }
+    
+    h2{
+      font-size:18px;
+      line-height:32px;
+
+    }
+    .well{
+      a{
+        color:#666;
+        &:hover{
+          text-decoration:none;
+          b{
+            text-decoration:underline;
+          }
+        }
+
+      }
+    }
   }
   
 }

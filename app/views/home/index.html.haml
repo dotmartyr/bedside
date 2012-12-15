@@ -10,7 +10,7 @@
         %p.p-1
           Work together to make their stay better.
           %br
-  .container-fluid.container-fluid-2
+  .container-fluid.upper-cta
     .row-fluid.row-fluid-2
       %span.span9.span9-1
         %h2.heading.heading-2 Hospital stays aren't fun, but we can make them better.
@@ -78,7 +78,7 @@
           park, how to get to the room, or even good topics to chat about. 
       %span.span6
         =image_tag "ss-home-tips.png", :class => 'screenshot'
-  .container-fluid.container-fluid-2
+  .container-fluid.lower-cta
     .row-fluid.row-fluid-5
       %span.span8
         %h2.heading
@@ -93,6 +93,26 @@
           %br
           %a.btn.btn-mini{href:"/users/sign_in"}
             Log in
+  .container-fluid.tanooki-suit
+    .row-fluid.row-fluid-5
+      %span.span8
+        %h2.heading
+          Bedside is a free and open source application, started by the folks at 
+          =succeed "." do
+            %a{:href => "http://tanookisuitlabs.com"} Tanooki Suit Labs
+          Help us make it better by 
+          %a{:href => "https://github.com/ericskiff/bedside"}
+            forking the project
+          or 
+          =succeed "." do
+            %a{:href => "https://github.com/ericskiff/bedside/issues"} 
+              reporting issues here. 
+          %br
+      %span.span4
+        .well
+          %a{:href => "http://tanookisuitlabs.com"} 
+            Tanooki Suit Labs is a new product and development studio in New York City specializing in Ruby on Rails and HTML5 mobile apps. 
+            %b Learn more.
   .container-fluid.container-fluid-4
     .row-fluid
       %span.span10.span10-2
