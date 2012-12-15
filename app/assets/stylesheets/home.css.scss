@@ -79,17 +79,6 @@ body {
         &.span3-1 {
           padding: 40px 0px 0px 0px; } }
       .span6 {
-        .dom-rect.dom-rect-1 {
-          background: #666666;
-          -moz-box-shadow: none;
-          -webkit-box-shadow: none;
-          -o-box-shadow: none;
-          box-shadow: none;
-          border-radius: 0px;
-          margin: 0px;
-          border: none;
-          width: 488px;
-          height: 190px; }
         .heading.heading-3 {
           font-family: "oswald";
           font-weight: 400; }
@@ -122,18 +111,6 @@ body {
     &.container-fluid-4 {
       background: #363636; }
     .row-fluid.row-fluid-3 .span6 {
-      .dom-rect {
-        &.dom-rect-2, &.dom-rect-3 {
-          background: #666666;
-          -moz-box-shadow: none;
-          -webkit-box-shadow: none;
-          -o-box-shadow: none;
-          box-shadow: none;
-          border-radius: 0px;
-          margin: 0px;
-          border: none;
-          width: 488px;
-          height: 190px; } }
       .heading {
         &.heading-4, &.heading-5 {
           font-family: "oswald";
@@ -147,17 +124,6 @@ body {
       padding: 0px 0px 34px 0px; }
     &.container-fluid-3 .row-fluid {
       .span6 {
-        .dom-rect.dom-rect-4 {
-          background: #666666;
-          -moz-box-shadow: none;
-          -webkit-box-shadow: none;
-          -o-box-shadow: none;
-          box-shadow: none;
-          border-radius: 0px;
-          margin: 0px;
-          border: none;
-          width: 488px;
-          height: 190px; }
         .heading.heading-6 {
           font-family: "oswald";
           font-weight: 400; }
@@ -197,9 +163,9 @@ body {
           text-align: center;
           color: #ffffff; } } }
     &.container-fluid-2 .row-fluid {
-      .span4 {
+      .lower-cta {
         padding: 59px 0px 0px 0px;
-        .btn {
+        .get-started-button {
           padding: 24px 48px 24px 48px;
           font-family: "verdana"; } }
       .span8 {
@@ -221,6 +187,16 @@ body {
       .span10 .dom-link {
         text-shadow: 0px 1px 2px #000000;
         color: #d1d1d1; } } }
+  .screenshot{
+    width:100%;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    padding: 4px;
+    background-color:#fff;
+  }
+  .lower-cta{
+    text-align:center;
+  }
+  
 }
 #invite-info{
   margin:0 auto;

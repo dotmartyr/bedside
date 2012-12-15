@@ -20,7 +20,7 @@
             and make your loved one's stay a little less lonely. 
           %br
       %span.span3.span3-1
-        %a#get-started-button.btn.btn-primary.btn-large.btn-1{href:"/users/sign_up"}
+        %a.get-started-button.btn.btn-primary.btn-large.btn-1{href:"/users/sign_up"}
           Get Started
           %br
         %p 
@@ -41,7 +41,7 @@
           Just let Bedside know the visiting hours, invite visitors, and let them schedule
           themselves. 
       %span.span6
-        .dom-rect.dom-rect-1
+        =image_tag "ss-home-visitors.png", :class => 'screenshot'
   .container-fluid.container-fluid-3
     .row-fluid.row-fluid-3
       %span.span6
@@ -54,7 +54,7 @@
           Bedside also gives people a spot to leave messages and love when they aren't able
           to visit.
       %span.span6
-        .dom-rect.dom-rect-2
+        =image_tag "ss-home-updates.png", :class => 'screenshot'
   .container-fluid
     .row-fluid.row-fluid-3
       %span.span6
@@ -66,7 +66,7 @@
           they come to visit. That way you can suggest favorite boredom breakers or special
           treats from home, and everyone can chip in to help make the stay a bit more comfortable.
       %span.span6
-        .dom-rect.dom-rect-3
+        =image_tag "ss-home-wishlist.png", :class => 'screenshot'
   .container-fluid.container-fluid-3
     .row-fluid.row-fluid-4
       %span.span6
@@ -77,7 +77,7 @@
           Every hospital has a few quirks to learn. Share tips for visitors about where to
           park, how to get to the room, or even good topics to chat about. 
       %span.span6
-        .dom-rect.dom-rect-4
+        =image_tag "ss-home-tips.png", :class => 'screenshot'
   .container-fluid.container-fluid-2
     .row-fluid.row-fluid-5
       %span.span8
@@ -85,10 +85,14 @@
           Bedside is 100% free. Start a page now and make your loved one's hospital stay more
           connected & comfortable.
           %br
-      %span.span4
-        %button.btn.btn-large
+      %span.span4.lower-cta
+        %a.get-started-button.btn.btn-large{href:"/users/sign_up"}
           Get Started
+        %p 
+          Already using Bedside?
           %br
+          %a.btn.btn-mini{href:"/users/sign_in"}
+            Log in
   .container-fluid.container-fluid-4
     .row-fluid
       %span.span10.span10-2
