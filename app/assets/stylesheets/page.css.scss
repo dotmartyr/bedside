@@ -113,7 +113,6 @@
     width: 24px; 
   }
   .page-title-bar {
-    margin-top: 43px;
     background-image: -moz-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.13) 100%);
     background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.13) 100%);
     background-image: -o-linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.13) 100%);
@@ -132,6 +131,7 @@
 
   .navbar {
     height: 42px;
+    margin-bottom:0px;
     .navbar-inner {
       border: 1px solid #d4d4d4; 
     } 
@@ -159,7 +159,7 @@
         text-shadow: none;
         border-radius: 3px;
         border: 1px solid #cfcfcf;
-        width: 520px;
+        width: 96%;
         height: 38px; 
       }
 
