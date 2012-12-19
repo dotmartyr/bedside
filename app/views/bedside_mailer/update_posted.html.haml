@@ -1,0 +1,10 @@
+%h1
+  #{@subject}
+
+%p 
+  Dear #{@user.name}, 
+
+%p 
+  An update on #{@page.patient_name.possessive} condition was posted.  
+  To see this new information, schedule a visit or to send well wishes, 
+  = link_to "go to #{@page.patient_name.possessive} Bedside page", page_url(@page)

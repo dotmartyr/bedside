@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = @page.posts.new(params[:post])
     if @post.save
+      Resque.enqueue(UpdateEmailEnqueer, @post.id)
       respond_with(@post)
     else
       respond_with(@post.errors)
