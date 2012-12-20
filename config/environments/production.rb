@@ -70,6 +70,12 @@ Bedside::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'bedsideapp.com', :protocol => "http:" }
 
+  ActionMailer::Base.smtp_settings = {
+    :address  => "smtp.sendgrid.net",
+    :port  => 587,
+    :user_name  => ENV['BEDSIDE_SMTP_USER_NAME'],
+    :password  => ENV['BEDSIDE_SMTP_PASSWORD']
+  }
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)

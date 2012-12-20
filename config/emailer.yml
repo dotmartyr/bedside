@@ -6,14 +6,14 @@ development:
   smtp_domain: localhost
   authentication: plain
 staging:
-  smtp_url: smtp.mailgun.org
+  smtp_url: 
   smtp_port: 587
   smtp_user: 
   smtp_password: 
   smtp_domain: 
   authentication: plain
 production:
-  smtp_url: smtp.mailgun.org
+  smtp_url: 
   smtp_port: 587
   smtp_user: 
   smtp_password: 
