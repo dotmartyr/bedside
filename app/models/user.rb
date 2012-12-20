@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
     def send_welcome_email
       # Don't send a welcome if this user is invited (we'll send an invite instead)
       if self.invitation_token.blank?
-        BedsideMailer.welcome(self.id).deliver!
+        BedsideMailer.welcome(self.id).deliver
       end
     end
   
