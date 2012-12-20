@@ -70,17 +70,7 @@ Bedside::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'bedsideapp.com', :protocol => "http:" }
 
-  # Configuration for using SendGrid on Heroku
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-    :user_name => ENV['BEDSIDE_SMTP_USER_NAME'],
-    :password => ENV['BEDSIDE_SMTP_PASSWORD'],
-    :domain => "bedsideapp.com",
-    :address => "smtp.sendgrid.net",
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
+
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
