@@ -17,9 +17,11 @@ class PageParticipationsController < ApplicationController
       @page_participation = @page.page_participations.new(:user_id => @user.id, :permission_level => PageParticipation::PermissionLevel::FOLLOWER)
     else
       invitee = User.invite!({:email => params[:page_participation][:email], 
-        :name => params[:page_participation][:name]}, 
-        current_user)
+            :name => params[:page_participation][:name]}, current_user) do |u|
+        u.skip_invitation = true
+      end
       @page_participation = @page.page_participations.new(:user_id => invitee.id, :permission_level => PageParticipation::PermissionLevel::FOLLOWER)
+      BedsideMailer.invitation(invitee.id, @page.id).deliver!
     end
     if @page_participation.save
       respond_with(@page_participation = @page.page_participations.new)

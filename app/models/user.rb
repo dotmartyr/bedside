@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   rolify
-  
+  after_create :send_welcome_email
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -16,5 +16,14 @@ class User < ActiveRecord::Base
   has_many :visits
   has_many :wishes, :foreign_key => 'claimed_by'
   has_many :comments
+
+    # devise confirm! method overriden
+  private
+    def send_welcome_email
+      # Don't send a welcome if this user is invited (we'll send an invite instead)
+      if self.invitation_token.blank?
+        BedsideMailer.welcome(self.id).deliver!
+      end
+    end
   
 end

@@ -8,6 +8,9 @@
   One of #{@page.patient_name.possessive} loved ones has created a Bedside page to help everyone stay updated on #{@page.patient_name.possessive} progress. 
 
 %p
-  To see updates, schedule a visit or to send well wishes, 
-  = link_to "go to #{@page.patient_name.possessive} Bedside page", page_url(@page)
+  To view updates, schedule a visit or send well wishes, 
+  = link_to 'accept this invitation', accept_invitation_url(@user, :invitation_token => @user.invitation_token)
+
+
+
 
