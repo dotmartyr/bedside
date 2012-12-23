@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_page
   respond_to :html, :js
-  
+
   def show
     @post = @page.posts.find(params[:id])
     respond_with(@post)
@@ -14,14 +14,14 @@ class PostsController < ApplicationController
   end
 
   def new
-    respond_with(@post = @page.posts.new)   
-  end 
+    respond_with(@post = @page.posts.new)
+  end
 
   def create
     @post = @page.posts.new(params[:post])
     if @post.save
       Resque.enqueue(UpdateEmailEnqueer, @post.id)
-      respond_with(@post)
+      respond_with(@post, location: page_post_path(page_id: @page.id, id: @post.id))
     else
       respond_with(@post.errors)
     end
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
   def update
     @post = @page.posts.find(params[:id])
     @post.update_attributes(params[:post])
-    
+
     respond_with([@page,@post])
   end
 
