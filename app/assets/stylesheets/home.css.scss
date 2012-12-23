@@ -4,7 +4,7 @@
 html {
   margin: 0px;
   padding: 0px;
-  background-color: #efede8; 
+  background-color: #efede8;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -14,8 +14,8 @@ input, .btn{
 
 body {
   margin: 0;
-  padding: 0; 
-  
+  padding: 0;
+
 
 }
 
@@ -93,12 +93,12 @@ body {
       &.row-fluid-3 {
         padding: 16px 0px 16px 0px; } }
     &.container-fluid-1 {
-      background: rgba(0, 0, 0, 0) url(bedside_header.png) repeat 0px 0px; 
+      background: rgba(0, 0, 0, 0) url(bedside_header.png) repeat 0px 0px;
       background-size:1280px;
     }
     &.lower-cta, &.upper-cta {
       background: #6392bf;
-      color:#fff; 
+      color:#fff;
       .span9-1{
         margin-top:16px;
       }
@@ -212,7 +212,7 @@ body {
       height:10px;
       width:100%;
     }
-    
+
     h2{
       font-size:18px;
       line-height:32px;
@@ -231,7 +231,7 @@ body {
       }
     }
   }
-  
+
 }
 #invite-info{
   margin:0 auto;
@@ -243,5 +243,9 @@ body {
     line-height:30px;
     margin-bottom:30px;
   }
+}
+
+.welcome{
+  padding-top: 10px;
 }
 
