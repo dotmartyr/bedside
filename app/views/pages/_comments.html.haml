@@ -3,7 +3,7 @@
   Discussion Board
 %br/
 = simple_form_for([@page, Comment.new], :remote => true, :html => {:class => 'form-vertical' }) do |f|
-  = f.input :body, as: "text", :placeholder => "Say something!", :input_html => { :class => 'textarea' }, label: false 
+  = f.input :body, as: "text", :placeholder => "Say something!", :input_html => { :class => 'textarea' }, label: false
 
   =f.button :submit, "Post", :class => "btn btn-mini btn-3"
 
@@ -11,7 +11,7 @@
   .well
     = comment.body
   %p
-    by #{comment.user.name} 
-    (#{comment.created_at.strftime("%m/%d/%Y")})
+    by #{comment.user.name}
+    (#{comment.created_at.strftime("%m/%d/%Y at %I:%M%p")})
 
   %br

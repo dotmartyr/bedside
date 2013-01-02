@@ -11,7 +11,7 @@
         #{simple_format(@page.posts.last.body, class: "info-text")}
     %p
       Posted on
-      = @page.posts.last.created_at.strftime("%m/%d/%Y")
+      = @page.posts.last.created_at.strftime("%m/%d/%Y at %I:%M%p")
 
 
 - if @page.can_edit?(current_user)
@@ -20,5 +20,4 @@
     = f.input :user_id, as: :hidden, input_html: {value: current_user.id}
 
     =f.button :submit, "Update", :class => "btn btn-mini btn-3"
-
 
