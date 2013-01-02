@@ -5,7 +5,7 @@
         %b Bedside
       %ul.nav
         %li.dropdown
-          %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"} 
+          %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
             My Pages
             %b.caret
           %ul.dropdown-menu
@@ -16,6 +16,9 @@
           =link_to 'Settings', "#{edit_user_path(current_user)}", {:remote => true, :id => 'edit_user'}
         %li
           = link_to 'Logout', destroy_user_session_path, :method=>'delete'
+      .pull-right.nav.welcome
+        Welcome to Bedside #{current_user.name} !
+
   .container-fluid.page-title-bar
     .row-fluid
       %span.span12
@@ -31,7 +34,7 @@
           =render "location"
         #tips-partial-container.detials-partial-container
           =render "tips"
-      
+
       %span.span4
         #overview-partial-container.detials-partial-container
           =render "overview"
@@ -42,9 +45,9 @@
           =render "visits"
         #wishlist
           =render "wishlist"
-        
+
       %span.span8
-        #posts      
+        #posts
           =render "posts"
         #comments
           =render "comments"
