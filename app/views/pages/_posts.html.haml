@@ -4,19 +4,20 @@
   %br/
 %p
   - if @page.posts.empty?
-    No updates yet. 
+    No updates yet.
   -else
     .well
       %p
         #{simple_format(@page.posts.last.body, class: "info-text")}
     %p
-      Posted on 
+      Posted on
       = @page.posts.last.created_at.strftime("%m/%d/%Y")
 
 
 - if @page.can_edit?(current_user)
   = simple_form_for([@page, Post.new], :remote => true, :html => {:class => 'form-vertical' }) do |f|
-    = f.input :body, as: "text", :placeholder => "Provide an update on #{@page.patient_name.possessive} condition", :input_html => { :class => 'textarea' }, label: false 
+    = f.input :body, as: "text", :placeholder => "Provide an update on #{@page.patient_name.possessive} condition", :input_html => { :class => 'textarea' }, label: false
+    = f.input :user_id, as: :hidden, input_html: {value: current_user.id}
 
     =f.button :submit, "Update", :class => "btn btn-mini btn-3"
 

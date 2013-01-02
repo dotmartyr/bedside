@@ -2,5 +2,6 @@
 
 FactoryGirl.define do
   factory :page do
+    patient_name 'Patient User'
   end
 end
