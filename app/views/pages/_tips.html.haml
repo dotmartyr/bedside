@@ -11,12 +11,12 @@
       Add some tips for visitors.
     %p
       (Suggestions: Parking hints, treats the nurses like, conversation topics, etc)
-    
-.tips-editable-container.hidden  
+
+.tips-editable-container.hidden
   = form_for @page, remote: true, html: {id: "tips-edit-form"} do |f|
     %p
       = f.text_area :tips, placeholder: "(Suggestions: Parking hints, treats the nurses like, conversation topics, etc)"
       %br
-    = f.submit"Save", class: "btn", "data-attribute" => "tips", "data-type" => "save-button"
-    %button.btn{"data-attribute" => "tips", "data-type" => "cancel-button"} 
+    %button.btn{"data-attribute" => "tips", "data-type" => "cancel-button"}
       Cancel
+    = f.submit"Save", class: "btn btn-primary", "data-attribute" => "tips", "data-type" => "save-button"
