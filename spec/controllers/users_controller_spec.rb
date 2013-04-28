@@ -21,4 +21,16 @@ describe UsersController do
     
   end
 
+  describe "GET 'update'" do 
+
+    it "should be successful" do
+      get :update, :id => @user.id
+      response.should be_success
+    end
+
+    it "should find the right user" do
+      get :update, :id => @user.id
+      assigns(:user).should == @user
+    end
+    
 end

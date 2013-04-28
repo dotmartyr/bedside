@@ -80,7 +80,8 @@ module Bedside
 
     # Set this on the command line!
     # Example: export FILEPICKER_API_KEY=XXXXXXXXXXXXXX
-    config.filepicker_rails.api_key = ENV['FILEPICKER_API_KEY']
+    #config.filepicker_rails.api_key = ENV['FILEPICKER_API_KEY']
+    config.filepicker_rails.api_key = 'AV1vdCt99ScyoiKORvNVzz'
 
   end
 end

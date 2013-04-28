@@ -3,7 +3,7 @@ EmailerConfig = YAML.load(File.read(Rails.root + 'config' + 'emailer.yml'))
 #set global email related variables
 EMAIL_HOST_URL = EmailerConfig[Rails.env]["email_host_url"]
 
-if Rails.env.development? 
+if Rails.env.development || Rails.env.test
   ActionMailer::Base.smtp_settings = {
     :address  => EmailerConfig[Rails.env]["smtp_url"],
     :port  => EmailerConfig[Rails.env]["smtp_port"],

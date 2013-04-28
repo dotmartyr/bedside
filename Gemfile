@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 gem 'pg'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
+
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0", :group => [:development, :test]
 gem "unicorn", ">= 4.3.1", :group => :production
@@ -30,6 +32,8 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'acts_as_commentable_with_threading'
 gem 'possessive'
+gem 'rails-settings'
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'activeadmin'
@@ -41,7 +45,6 @@ gem 'resque'
 gem 'resque_mailer'
 gem 'whenever', :require => false
 gem "devise-async"
-
 
 group :development, :test do
   gem "pry"
