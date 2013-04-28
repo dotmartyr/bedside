@@ -32,7 +32,7 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'acts_as_commentable_with_threading'
 gem 'possessive'
-gem 'rails-settings'
+gem 'ledermann-rails-settings', :require => 'rails-settings'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
