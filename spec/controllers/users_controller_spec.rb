@@ -32,5 +32,6 @@ describe UsersController do
       get :update, :id => @user.id
       assigns(:user).should == @user
     end
-    
+  end
+  
 end

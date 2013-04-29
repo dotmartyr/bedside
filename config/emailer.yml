@@ -5,6 +5,13 @@ development:
   smtp_password: testtest
   smtp_domain: localhost
   authentication: plain
+test:
+  smtp_url: localhost
+  smtp_port: 1025
+  smtp_user: noc@bedsideapp.com
+  smtp_password: testtest
+  smtp_domain: localhost
+  authentication: plain
 staging:
   smtp_url: 
   smtp_port: 587
