@@ -17,6 +17,11 @@ class User < ActiveRecord::Base
   has_many :wishes, :foreign_key => 'claimed_by'
   has_many :comments
 
+  # User settings (Ledermann-rails-settings: https://github.com/ledermann/rails-settings)
+  has_settings do |s|
+    s.key :email_preferences, defaults: { page_update: true }
+  end 
+
     # devise confirm! method overriden
   private
     def send_welcome_email
